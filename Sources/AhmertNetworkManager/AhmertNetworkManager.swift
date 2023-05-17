@@ -4,7 +4,7 @@ public class NetworkManager {
     
     public static let shared = NetworkManager()
     
-    func request<T: Codable>(type : T.Type, urlString: String, method : HTTPMethods, completion : @escaping ((Result<T, ErrorTypes>)->())){
+    public func request<T: Codable>(type : T.Type, urlString: String, method : HTTPMethods, completion : @escaping ((Result<T, ErrorTypes>)->())){
         
         let session = URLSession.shared
         
@@ -36,7 +36,7 @@ public class NetworkManager {
         
     }
     
-    fileprivate func handleResponse<T: Codable>(data : Data, completion : @escaping ((Result<T, ErrorTypes>)->())){
+    public func handleResponse<T: Codable>(data : Data, completion : @escaping ((Result<T, ErrorTypes>)->())){
         
         do {
             
@@ -50,14 +50,14 @@ public class NetworkManager {
     }
 }
 
-enum HTTPMethods : String {
+public enum HTTPMethods : String {
 
     case get = "GET"
     case post = "POST"
     
 }
 
-enum ErrorTypes : String, Error{
+public enum ErrorTypes : String, Error{
     case invalidData = "invalid Data"
     case invalidURL = "invalid URL"
     case generalError = "An error happened"
