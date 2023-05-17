@@ -1,8 +1,8 @@
 import Foundation
 
-class NetworkManager {
+public class NetworkManager {
     
-    static let shared = NetworkManager()
+    public static let shared = NetworkManager()
     
     func request<T: Codable>(type : T.Type, urlString: String, method : HTTPMethods, completion : @escaping ((Result<T, ErrorTypes>)->())){
         

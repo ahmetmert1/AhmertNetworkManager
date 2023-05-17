@@ -2,6 +2,6 @@
 
 A description of this package.
 
-To install this package, import 'url here' n SPM.
+To install this package, import 'https://github.com/ahmetmert1/AhmertNetworkManager.git' in SPM.
 
 
